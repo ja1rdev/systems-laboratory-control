@@ -1,122 +1,89 @@
 {% extends "layout.html" %}
 {% block body %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+
 <div class="header d-flex justify-content-end">
     <h5>
         <a href="/admin">Volver</a>
     </h5>
 </div>
 
-<div class="register"
-    style="position: relative; width: 400px; background: white; height: 550px; box-shadow: 0 12px 19px rgba(0, 0, 0, 0.2); border-radius: 10px; margin: auto; padding: 20px;">
-
+<div class="register-container">
     <center>
-        <h3 style="margin-top: 14px; margin-bottom: 30px;">Registrar</h3>
+        <h3 class="register-title">Registrar</h3>
     </center>
 
     <form action="/register" method="POST" enctype="multipart/form-data">
 
         <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="👤 Nombre de usuario"
-                type="text"
-                style="border-radius: 10px; width: 100%; padding: 10px; border: 1px solid #ccc; font-size: 14px;">
+            <input autocomplete="off" autofocus class="form-control input-custom" 
+                   name="username" placeholder="👤 Nombre de usuario" type="text">
         </div>
 
         {% if message == 1 %}
-        <center>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                style="border-radius: 10px; width: 100%; max-width: 400px; text-align: center; margin: 0 auto; font-size: 14px;">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                &#9997 Por favor, ingrese su nombre de usuario.
-            </div>
-        </center>
+        <div class="alert alert-danger alert-dismissible fade show custom-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            &#9997 Por favor, ingrese su nombre de usuario.
+        </div>
         {% endif %}
 
-        <br>
-
-        <div class="form-group" style="position: relative;">
-            <input style="border-radius: 10px; width: 100%; padding: 10px; border: 1px solid #ccc; font-size: 14px;"
-                class="form-control" name="password" placeholder="&#128273 Contraseña" type="password" id="password">
-            <button type="button" id="togglePassword"
-                style="background: none; border: none; cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: flex; align-items: center;">
-                <img id="eyeIcon" src="{{ url_for('static', filename='images/eye-closed.png')}}"
-                    alt="Toggle password visibility" style="width: 20px; height: 20px;">
+        <div class="form-group password-wrapper">
+            <input class="form-control input-custom" name="password" 
+                   placeholder="&#128273 Contraseña" type="password" id="password">
+            <button type="button" id="togglePassword" class="toggle-btn">
+                <img id="eyeIcon" src="{{ url_for('static', filename='images/eye-closed.png')}}" alt="Ver contraseña">
             </button>
         </div>
 
         {% if message == 2 %}
-        <center>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                style="border-radius: 10px; width: 100%; text-align: center; margin: 0 auto;  font-size: 14px;">
-                <button type="button" class="close" data-dismiss="alert" aria-label="close" style="float: right;">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                &#9997 Por favor, ingrese su contraseña.
-            </div>
-        </center>
+        <div class="alert alert-danger alert-dismissible fade show custom-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            &#9997 Por favor, ingrese su contraseña.
+        </div>
         {% endif %}
 
-        <br>
-
-        <div class="form-group" style="position: relative;">
-            <input
-                style="border-radius: 10px; width: 100%; max-width: 400px; padding: 10px; border: 1px solid #ccc; font-size: 14px;"
-                class="form-control" name="confirmation" placeholder="&#128273 Confirmar Contraseña" type="password"
-                id="confirmation" />
-
-            <button type="button" id="toggleConfirmation"
-                style="background: none; border: none; cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
-                <img id="eyeIconConfirmation" src="{{ url_for('static', filename='images/eye-closed.png') }}"
-                    alt="Toggle password visibility" style="width: 20px; height: 20px;">
+        <div class="form-group password-wrapper">
+            <input class="form-control input-custom" name="confirmation" 
+                   placeholder="&#128273 Confirmar Contraseña" type="password" id="confirmation">
+            <button type="button" id="toggleConfirmation" class="toggle-btn">
+                <img id="eyeIconConfirmation" src="{{ url_for('static', filename='images/eye-closed.png') }}" alt="Ver contraseña">
             </button>
         </div>
 
         {% if message == 4 %}
-        <center>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                style="border-radius: 10px; width: 100%; max-width: 400px; text-align: center; margin: 0 auto; font-size: 14px;">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                &#9997 Por favor, confirme su contraseña.
-            </div>
-        </center>
+        <div class="alert alert-danger alert-dismissible fade show custom-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            &#9997 Por favor, confirme su contraseña.
+        </div>
         {% endif %}
 
-        <br>
-
-        <div style="text-align: center;">
-            <button class="btn btn-success" type="submit" style="border-radius:10px; width: 100%; max-width: 400px;">
-                Guardar
-            </button>
+        <div class="form-actions">
+            <button class="btn btn-success btn-save" type="submit">Guardar</button>
         </div>
 
         {% if message == 3 %}
-        <center>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                style="border-radius: 10px; width: 100%; max-width: 400px; text-align: center;margin: 0 auto;  margin-top: 18px;">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                &#10060 Las contraseñas no coinciden. Por favor, inténtelo de nuevo.
-            </div>
-        </center>
+        <div class="alert alert-danger alert-dismissible fade show custom-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            &#10060 Las contraseñas no coinciden. Por favor, inténtelo de nuevo.
+        </div>
         {% endif %}
 
-        <br>
-
         {% if message == 5 %}
-        <center>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                style="border-radius: 10px; width: 100%; max-width: 400px; margin: 0 auto; text-align:center;">
-                <button type='button' class='close' data-dismiss='alert' aria-label='close' style='float:right'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
-                &#9997 Nombre de usuario ya está en uso.
-            </div>
-        </center>
+        <div class="alert alert-danger alert-dismissible fade show custom-alert">
+            <button type='button' class='close' data-dismiss='alert' aria-label='close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+            &#9997 Nombre de usuario ya está en uso.
+        </div>
         {% endif %}
 
     </form>
