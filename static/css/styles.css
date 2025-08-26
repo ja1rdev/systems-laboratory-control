@@ -1,36 +1,44 @@
+/* Lab title styling */
 .title-lab {
     font-size: 21px;
     font-weight: bold;
 }
 
+/* Lab logo dimensions */
 .logo-lab {
     width: 100px;
     height: 100px;
 }
 
+/* Label styling */
 label {
     font-weight: bold;
     font-size: 17px;
 }
 
+/* Button styling */
 .btn {
     font-size: 17px;
     text-transform: none;
 }
 
+/* Form control input styling */
 .form-control {
     font-size: 17px;
 }
 
+/* Alert text styling */
 .alert {
     font-weight: bold;
     font-size: 17px;
 }
 
+/* Table font size */
 table {
     font-size: 15px;
 }
 
+/* Responsive heading size for small screens */
 @media (max-width: 576px) {
     h1 {
         font-size: 5.5vw !important;

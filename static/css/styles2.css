@@ -1,3 +1,4 @@
+/* Header bar styling */
 .header {
     background-color: #3b5998;
     color: white;
@@ -6,22 +7,26 @@
     margin-left: -60px;
 }
 
+/* Header links styling */
 .header a {
     color: white;
     text-decoration: none;
     margin-left: 15px;
 }
 
+/* Header links hover effect */
 .header a:hover {
     text-decoration: underline;
 }
 
+/* Table width and margin adjustments */
 table {
     width: 110%;
     margin-left: 0px;
 }
 
+/* Responsive table container styling */
 .table-responsive {
     width: 110%;
     margin-left: -60px;
-  }
+}

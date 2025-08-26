@@ -1,6 +1,4 @@
-/* Shared Styles (Register, Restore, Login) */
-
-/* General input style */
+/* General input style for form fields */
 .input-custom {
     border-radius: 10px;
     width: 100%;
@@ -9,11 +7,12 @@
     font-size: 14px;
 }
 
-/* Password wrapper */
+/* Container for password input and toggle button */
 .password-wrapper {
     position: relative;
 }
 
+/* Button to toggle password visibility */
 .toggle-btn {
     background: none;
     border: none;
@@ -26,12 +25,13 @@
     align-items: center;
 }
 
+/* Icon inside the toggle button */
 .toggle-btn img {
     width: 20px;
     height: 20px;
 }
 
-/* Save / Login buttons */
+/* Styles for Save and Login buttons */
 .btn-save,
 .btn-login {
     border-radius: 10px;
@@ -40,7 +40,7 @@
     font-weight: 500;
 }
 
-/* Alerts */
+/* Custom alert box styling */
 .custom-alert {
     border-radius: 10px;
     width: 100%;
@@ -50,7 +50,7 @@
     font-size: 14px;
 }
 
-/* Register Page */
+/* Register Page Container */
 .register-container {
     position: relative;
     width: 100%;
@@ -63,18 +63,20 @@
     box-shadow: 0 12px 19px rgba(0, 0, 0, 0.2);
 }
 
+/* Title styling for Register page */
 .register-title {
     margin-top: 14px;
     margin-bottom: 30px;
     font-weight: 600;
 }
 
-/* Restore Page */
+/* Restore Page Header positioning */
 .header-restore {
     position: relative;
     left: -50px;
 }
 
+/* Restore Page Container */
 .restore-container {
     position: relative;
     width: 100%;
@@ -87,11 +89,13 @@
     box-shadow: 0 12px 19px rgba(0, 0, 0, 0.2);
 }
 
+/* Title styling for Restore page */
 .restore-title {
     margin: 10px 0 30px 0;
     font-weight: 600;
 }
 
+/* Styling for readonly input fields */
 .readonly-field {
     border-radius: 10px;
     width: 100%;
@@ -101,7 +105,7 @@
     background: #f9f9f9;
 }
 
-/* Login Page*/
+/* Login Page Container */
 .login-container {
     position: relative;
     width: 100%;
@@ -114,6 +118,7 @@
     box-shadow: 0 12px 19px rgba(0, 0, 0, 0.2);
 }
 
+/* Title styling for Login page */
 .login-title {
     margin: 14px 0 30px 0;
     font-weight: 600;
