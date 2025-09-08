@@ -19,7 +19,7 @@ load_dotenv()
 # New instance Flask
 app = Flask(__name__)
 
-# Generate secret key
+
 app.config["SECRET_KEY"] = secrets.token_hex(16)
 
 # Secure connection using environment variables

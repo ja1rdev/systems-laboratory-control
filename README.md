@@ -48,7 +48,7 @@ systems-laboratory-control/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/jairdevl/control-systems-laboratories.git systems-laboratory-control
+   git clone https://github.com/ja1rdev/control-systems-laboratories.git systems-laboratory-control
    cd systems-laboratory-control
    ```
 
